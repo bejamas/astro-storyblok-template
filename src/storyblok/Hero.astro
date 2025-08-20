@@ -6,7 +6,7 @@ const { blok } = Astro.props
 
 <section {...storyblokEditable(blok)} class="min-h-[75vh]">
   { /* Hero Control */ }
-  <div data-posthog="hero-control" class="h-full flex flex-col justify-end items-center pt-40 bg-no-repeat bg-cover bg-top"
+  <div data-posthog="hero-control" class="h-full hidden flex-col justify-end items-center pt-40 bg-no-repeat bg-cover bg-top"
     style={`background-image: ${blok.image.filename ? `url(${blok.image.filename}/m/2560x0)` : ''}`}
     >
     <div class="max-w-[624px] mx-auto px-6 mb-10 md:mb-20 flex flex-col justify-center items-center">
@@ -33,7 +33,7 @@ const { blok } = Astro.props
   </div>
 
   { /* Hero Test */ }
-  <div data-posthog="hero-control" class="min-h-[75vh] hidden items-end pt-40 bg-no-repeat bg-cover bg-top"
+  <div data-posthog="hero-test" class="h-full hidden items-end pt-40 bg-no-repeat bg-cover bg-top"
   style={`background-image: ${blok.image.filename ? `url(${blok.image.filename}/m/2560x0)` : ''}`}
   >
     <div class="w-full bg-black/40 lg:bg-black pt-8">

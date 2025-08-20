@@ -8,6 +8,7 @@
         const controlElement = document.querySelector('[data-posthog="hero-control"]');
         const testElement = document.querySelector('[data-posthog="hero-test"]');
 
+
         // Add null checks for safety
         if (!controlElement || !testElement) {
           console.warn('Hero A/B test elements not found');
@@ -37,7 +38,7 @@
             posthog.capture('hero_cta_clicked', {
               variant: variant || 'control',
               button_text: button.textContent?.trim() || '',
-              hero_section: button.closest('[data-posthog]')?.getAttribute('data-posthog') || ''
+              hero_section: button.closest('[data-posthog]').getAttribute('data-posthog') || ''
             });
           });
         });
