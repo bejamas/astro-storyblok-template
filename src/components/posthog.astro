@@ -5,12 +5,10 @@
     defaults: '2025-05-24',
     loaded: (posthog) => {
       posthog.onFeatureFlags(() => {
-        const controlElement = document.querySelector('[data-posthog="hero-control"]');
-        const testElement = document.querySelector('[data-posthog="hero-test"]');
-
+        const controlElement = document.querySelector('[data-posthog]');
 
         // Add null checks for safety
-        if (!controlElement || !testElement) {
+        if (!controlElement) {
           console.warn('Hero A/B test elements not found');
           return;
         }
@@ -18,17 +16,9 @@
         const variant = posthog.getFeatureFlag('hero-layout-test');
 
         if (variant === 'test') {
-          // Show test variant
-          controlElement.classList.add('hidden');
-          controlElement.classList.remove('flex');
-          testElement.classList.remove('hidden');
-          testElement.classList.add('flex');
+          controlElement.classList.add('is-test');
         } else {
-          // Show control variant (default case, handles 'control' and undefined)
-          controlElement.classList.add('flex');
-          controlElement.classList.remove('hidden');
-          testElement.classList.add('hidden');
-          testElement.classList.remove('flex');
+          controlElement.classList.remove('is-test');
         }
 
         // Track CTA clicks
