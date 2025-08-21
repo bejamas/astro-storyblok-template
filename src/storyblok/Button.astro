@@ -1,10 +1,10 @@
 ---
 import Button from '../components/Button.astro'
 import { getHref } from '../utils/getHref'
-const { blok } = Astro.props
+const { blok, classes } = Astro.props
 
 const label = blok.label || 'Become a Member'
 const variant = blok.style || 'primary'
 ---
 
-<Button label={label} href={getHref(blok.url)} variant={variant} />
+<Button label={label} href={getHref(blok.url)} variant={variant} classes={classes} />

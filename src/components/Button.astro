@@ -1,5 +1,5 @@
 ---
-const { label, href, variant = 'primary' } = Astro.props
+const { label, href, variant = 'primary', classes } = Astro.props
 
 const baseStyles = 'inline-block px-5 py-4 text-center rounded-sm'
 const variants = {
@@ -7,7 +7,7 @@ const variants = {
   secondary: 'bg-white text-black',
 }
 
-const className = `${baseStyles} ${variants[variant] || variants.primary}`
+const className = `${classes} ${baseStyles} ${variants[variant] || variants.primary}`
 ---
 
 <a href={href} class={className}>

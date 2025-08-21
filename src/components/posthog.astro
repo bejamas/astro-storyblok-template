@@ -32,13 +32,11 @@
         }
 
         // Track CTA clicks
-        const buttons = document.querySelectorAll('[data-posthog] a');
+        const buttons = document.querySelectorAll('[data-posthog] .cta-button');
         buttons.forEach(button => {
           button.addEventListener('click', () => {
             posthog.capture('hero_cta_clicked', {
-              variant: variant || 'control',
-              button_text: button.textContent?.trim() || '',
-              hero_section: button.closest('[data-posthog]').getAttribute('data-posthog') || ''
+              variant: variant || 'control'
             });
           });
         });
