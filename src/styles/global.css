@@ -5,15 +5,19 @@
   navigation: auto;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1028px;
+  }
+}
+
 :root {
-  /* --outer-container-width: 780px; */
+
 }
 
 @theme {
   --font-inter: "Inter", sans-serif;
   --font-adamina: "Adamina", sans-serif;
-
-  /* --container-3xl: var(--outer-container-width); */
 
   --color-background: #F4F5F5;
   --color-foreground: #000;
