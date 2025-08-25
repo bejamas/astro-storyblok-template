@@ -40,7 +40,6 @@ const { data: settingsData } = await storyblokApi.get(
   }
 )
 const siteSettings  = settingsData.story
-
 ---
 
 <Layout blok={story.content} siteSettings={siteSettings.content} langSwitch={langSwitch} language={language} translate={translate}>
