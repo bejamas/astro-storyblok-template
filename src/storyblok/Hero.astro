@@ -6,8 +6,7 @@ const { blok } = Astro.props
 
 <section {...storyblokEditable(blok)} class="group" data-posthog>
 
-  <div class="min-h-[82vh] flex items-end pt-40 bg-no-repeat bg-cover bg-top bg-black/55 bg-blend-multiply" style={`background-image: ${blok.image.filename ? `url(${blok.image.filename}/m/2560x0)` : ''}`}>
-    { /* style={`background: linear-gradient(1deg, rgba(0, 0, 0, 0.00) 1.04%, rgba(0, 0, 0, 0.70) 82.46%) ${blok.image.filename ? `, url(${blok.image.filename}/m/2560x0) center/cover no-repeat` : ''}`} */}
+  <div class="min-h-[82vh] flex items-end pt-40 bg-no-repeat bg-cover bg-top bg-black/55 bg-blend-multiply" style={`background-image: ${blok.image.filename ? `url('${blok.image.filename}/m/1440x0/filters:quality(80)')` : ''}`}>
     <div class="w-full group-[.is-test]:lg:bg-black pt-10">
 
       <div class="max-w-[624px] group-[.is-test]:max-w-[1016px] mx-auto mb-28 group-[.is-test]:mb-0 px-6 flex flex-col gap-y-8 justify-center items-center group-[.is-test]:lg:flex-row group-[.is-test]:lg:justify-between">
@@ -27,19 +26,6 @@ const { blok } = Astro.props
           <StoryblokComponent blok={blok.button[0]} classes="cta-button" />
         )}
       </div>
-        {blok.button && blok.button.length > 0 && (
-          <StoryblokComponent blok={blok.button[0]} classes="cta-button" />
-        )}
-      </div>
-
-      <div class="max-w-[1016px] mx-auto px-6">
-        {blok.partners && blok.partners.length > 0 && (
-          <StoryblokComponent blok={blok.partners[0]} />
-        )}
-      </div>
-
-    </div>
-  </div>
 
       <div class="max-w-[1016px] mx-auto px-6">
         {blok.partners && blok.partners.length > 0 && (
