@@ -27,6 +27,19 @@ const { blok } = Astro.props
           <StoryblokComponent blok={blok.button[0]} classes="cta-button" />
         )}
       </div>
+        {blok.button && blok.button.length > 0 && (
+          <StoryblokComponent blok={blok.button[0]} classes="cta-button" />
+        )}
+      </div>
+
+      <div class="max-w-[1016px] mx-auto px-6">
+        {blok.partners && blok.partners.length > 0 && (
+          <StoryblokComponent blok={blok.partners[0]} />
+        )}
+      </div>
+
+    </div>
+  </div>
 
       <div class="max-w-[1016px] mx-auto px-6">
         {blok.partners && blok.partners.length > 0 && (

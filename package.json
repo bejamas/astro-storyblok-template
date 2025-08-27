@@ -16,6 +16,7 @@
     "astro": "5.12.9",
     "tailwindcss": "^4.1.11",
     "@tailwindcss/vite": "^4.1.11",
-    "vite": "^5.2.11"
+    "vite": "^5.2.11",
+    "axios": "^1.11.0"
   }
 }
